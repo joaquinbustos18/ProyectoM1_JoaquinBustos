@@ -1,7 +1,11 @@
 body {
   margin: 0;
   padding: 0;
-  background-color: #763016;
+  background-color: #2a1a0e;
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
 }
 
 /* ==============  HEADER ==============*/
@@ -10,6 +14,8 @@ body {
 .header {
   display: flex;
   align-items: center;
+  border-bottom: 1px solid #e8845a;
+  margin-bottom: 2rem;
 }
 
 .header__logo {
@@ -24,6 +30,10 @@ body {
 /* ==============  MAIN ==============*/
 /* =====================================*/
 
+main {
+  flex: 1;
+}
+
 .main__section--generador {
   padding: 1rem;
 
@@ -33,18 +43,94 @@ body {
   width: 80%;
   margin: 0 auto;
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-columns: 2fr 2fr 1fr;
   grid-column-gap: 20px;
   grid-row-gap: 20px;
-  justify-items: stretch;
-  align-items: stretch;
+  justify-items: center;
+  align-items: start;
+  background-color: #3d2010;
+}
+
+.section__div1--h2 {
+  color: white;
+}
+
+.div2__buttons-group {
+  display: flex;
+  gap: 8px;
+  margin-top: 8px;
 }
 
 .div2__button {
+  padding: 6px 14px;
   border-radius: 2rem;
+  background-color: #e8845a;
+  border: none;
 }
 
 .main__section--button {
-  width: 8rem;
-  height: 8rem;
+  width: auto;
+  height: auto;
+  padding: 12px 24px;
+  border-radius: 2rem;
+  background-color: #f4622a;
+  border: none;
+  align-self: center;
+  justify-self: start;
+  margin-top: 38px;
+}
+
+/* ============== SECCION CARDS ==============*/
+/* ===========================================*/
+
+.palette {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  gap: 1rem;
+  margin: 0 auto;
+  width: 80%;
+  margin-top: 5rem;
+  margin-bottom: 5rem;
+}
+
+.card {
+  width: 150px;
+  border-radius: 16px;
+  overflow: hidden;
+  background-color: #1a1f2e; /* fondo azul oscuro */
+}
+
+.card-color {
+  width: 100%;
+  height: 180px;
+  border-radius: 12px; /* redondeo interno */
+}
+
+.card-info {
+  padding: 10px 12px 14px;
+}
+
+.card-hex {
+  color: #ffffff;
+  font-size: 15px;
+  font-weight: 600;
+  margin-bottom: 4px;
+}
+
+.card-hsl {
+  color: #6b7280;
+  font-size: 12px;
+}
+
+/* ============== FOOTER ==============*/
+/* ====================================*/
+
+.footer {
+  border-top: 1px solid #e8845a;
+  padding: 1rem;
+}
+
+.footer__parrafo {
+  color: #6b7280;
 }
