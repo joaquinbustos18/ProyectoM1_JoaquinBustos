@@ -1,0 +1,50 @@
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #763016;
+}
+
+/* ==============  HEADER ==============*/
+/* =====================================*/
+
+.header {
+  display: flex;
+  align-items: center;
+}
+
+.header__logo {
+  width: 6rem;
+  height: 6rem;
+}
+
+.header__titulo {
+  font-size: 1.5rem;
+}
+
+/* ==============  MAIN ==============*/
+/* =====================================*/
+
+.main__section--generador {
+  padding: 1rem;
+
+  border: 1px solid black;
+  border-radius: 1rem;
+
+  width: 80%;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-column-gap: 20px;
+  grid-row-gap: 20px;
+  justify-items: stretch;
+  align-items: stretch;
+}
+
+.div2__button {
+  border-radius: 2rem;
+}
+
+.main__section--button {
+  width: 8rem;
+  height: 8rem;
+}
