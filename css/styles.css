@@ -1,3 +1,6 @@
+/* ============== GENERALES ==============*/
+/* =======================================*/
+
 body {
   margin: 0;
   padding: 0;
@@ -6,6 +9,10 @@ body {
   display: flex;
   flex-direction: column;
   min-height: 100vh;
+}
+
+button {
+  cursor: pointer;
 }
 
 /* ==============  HEADER ==============*/
@@ -121,6 +128,14 @@ main {
 .card-hsl {
   color: #6b7280;
   font-size: 12px;
+}
+
+.oculto {
+  display: none;
+}
+
+.visible {
+  display: block;
 }
 
 /* ============== FOOTER ==============*/
