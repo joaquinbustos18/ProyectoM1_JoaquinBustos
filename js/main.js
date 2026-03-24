@@ -5,7 +5,7 @@ let card = document.querySelectorAll(".card");
 let btnPaleta = document.getElementById("generar__paleta");
 let hex = document.querySelectorAll(".card-hex");
 let cardColor = document.querySelectorAll(".card-color");
-let activo = document.querySelector("activo ");
+let botonCopiar = document.querySelectorAll(".botonCopiar");
 
 btn.forEach((valor) => {
   valor.addEventListener("click", () => {
@@ -20,6 +20,14 @@ btn.forEach((valor) => {
     if (valor.id === "btn-9") {
       recorrerBtn(3);
     }
+  });
+});
+
+botonCopiar.forEach((btn) => {
+  btn.addEventListener("click", () => {
+    let cardPadre = btn.closest(".card");
+    let hexColor = cardPadre.querySelector(".card-hex");
+    navigator.clipboard.writeText(hexColor.innerHTML);
   });
 });
 

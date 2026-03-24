@@ -1,4 +1,4 @@
-# ProyectoM1_JoaquinBustos# 🎨 Colorfly Studio
+# 🎨 Colorfly Studio
 
 > Generador de paletas de colores profesionales en segundos.
 
@@ -40,59 +40,23 @@
 
 ## 🛠️ Pasos para ejecutar el proyecto localmente
 
-### Requisitos previos
+No requiere instalación de dependencias. Al ser un proyecto de HTML, CSS y JavaScript puro, solo necesitás:
 
-Asegurate de tener instalado:
-
-- [Node.js](https://nodejs.org/) v16 o superior
-- [npm](https://www.npmjs.com/) o [yarn](https://yarnpkg.com/)
-
-### 1. Clonar el repositorio
+1. Clonar el repositorio:
 
 ```bash
-git https://github.com/joaquinbustos18/ProyectoM1_JoaquinBustos.git
-cd ProyectoM1_JoaquinBustos
+   git clone https://github.com/joaquinbustos18/ProyectoM1_JoaquinBustos.git
 ```
 
-### 2. Instalar dependencias
-
-```bash
-npm install
-```
-
-### 3. Iniciar el servidor de desarrollo
-
-```bash
-npm run dev
-```
-
-La app estará disponible en: **http://localhost:3000**
+2. Abrir el archivo `index.html` en tu navegador.
 
 ---
 
 ## 📦 Despliegue (Deploy)
 
-### GitHub Pages
+El proyecto está desplegado en **GitHub Pages** de forma automática desde la rama `main`.
 
-1. Instalá el paquete necesario:
-
-   ```bash
-   npm install --save-dev gh-pages
-   ```
-
-2. Agregá este script en tu `package.json`:
-
-   ```json
-   "scripts": {
-     "deploy": "gh-pages -d dist"
-   }
-   ```
-
-3. Generá el build y desplegá:
-   ```bash
-   npm run build
-   npm run deploy
-   ```
+🔗 [Ver proyecto en vivo](https://joaquinbustos18.github.io/ProyectoM1_JoaquinBustos)
 
 ---
 
@@ -101,11 +65,11 @@ La app estará disponible en: **http://localhost:3000**
 ```
 ProyectoM1_JoaquinBustos/
 ├── css/
-│   ├── styles.css
+│   └── styles.css
 ├── img/
-│   ├── logo.png
+│   └── logo.png
 ├── js/
-│   ├── main.js
+│   └── main.js
 ├── index.html
 └── README.md
 ```
