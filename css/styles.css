@@ -1,151 +1,281 @@
-/* ============== GENERALES ==============*/
-/* =======================================*/
+/* ── Variables de color ── */
+:root {
+  --colorSuperficie: #f7f9fb;
+  --colorSuperficieContenedor: #e8eff3;
+  --colorSuperficieContenedorBajo: #f0f4f7;
+  --colorSuperficieContenedorAlto: #e1e9ee;
+  --colorSuperficieContenedorMinimo: #ffffff;
+  --colorSobreSuperficie: #2a3439;
+  --colorSobreSuperficieVariante: #566166;
+  --colorPrimario: #515f74;
+  --colorSobrePrimario: #f6f7ff;
+  --colorContenedorPrimario: #d5e3fd;
+  --colorSobreContenedorPrimario: #455367;
+  --colorBorde: #a9b4b9;
+}
 
-body {
+/* ── Reset y base ── */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
   margin: 0;
   padding: 0;
-  background-color: #2a1a0e;
-  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+}
+
+body {
+  font-family: "Inter", sans-serif;
+  background-color: var(--colorSuperficie);
+  color: var(--colorSobreSuperficie);
+  min-height: 100vh;
   display: flex;
   flex-direction: column;
-  min-height: 100vh;
 }
 
-button {
-  cursor: pointer;
+.iconoMaterial {
+  font-family: "Material Symbols Outlined";
+  font-variation-settings:
+    "FILL" 0,
+    "wght" 400,
+    "GRAD" 0,
+    "opsz" 24;
+  font-size: 20px;
+  line-height: 1;
+  user-select: none;
 }
 
-/* ==============  HEADER ==============*/
-/* =====================================*/
+/* ── Encabezado ── */
+.encabezadoPrincipal {
+  background-color: var(--colorSuperficie);
+  width: 100%;
+  border-bottom: 1px solid
+    color-mix(in srgb, var(--colorBorde) 20%, transparent);
+}
 
-.header {
+.barraNavegacion {
   display: flex;
   align-items: center;
-  border-bottom: 1px solid #e8845a;
+  justify-content: space-between;
+  padding: 1rem 1.5rem;
+  max-width: 72rem;
+  margin: 0 auto;
+  width: 100%;
+}
+
+.logoMarca {
+  font-size: 1.2rem;
+  font-weight: 800;
+  letter-spacing: -0.04em;
+  color: var(--colorPrimario);
+  text-decoration: none;
+}
+
+/* ── Contenido principal ── */
+.contenidoPrincipal {
+  flex: 1;
+  max-width: 72rem;
+  margin: 0 auto;
+  padding: 4rem 1.5rem 6rem;
+  width: 100%;
+}
+
+/* ── Sección héroe ── */
+.seccionHero {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  margin-bottom: 4rem;
+}
+
+.tituloPrincipal {
+  font-size: clamp(2.5rem, 6vw, 3.5rem);
+  font-weight: 800;
+  letter-spacing: -0.03em;
+  color: var(--colorPrimario);
+  line-height: 1.1;
   margin-bottom: 2rem;
 }
 
-.header__logo {
-  width: 6rem;
-  height: 6rem;
-}
-
-.header__titulo {
-  font-size: 1.5rem;
-}
-
-/* ==============  MAIN ==============*/
-/* =====================================*/
-
-main {
-  flex: 1;
-}
-
-.main__section--generador {
-  padding: 1rem;
-
-  border: 1px solid black;
-  border-radius: 1rem;
-
-  width: 80%;
-  margin: 0 auto;
-  display: grid;
-  grid-template-columns: 2fr 2fr 1fr;
-  grid-column-gap: 20px;
-  grid-row-gap: 20px;
-  justify-items: center;
-  align-items: start;
-  background-color: #3d2010;
-}
-
-.section__div1--h2 {
-  color: white;
-}
-
-.div2__buttons-group {
-  display: flex;
-  gap: 8px;
-  margin-top: 8px;
-}
-
-.div2__button {
-  padding: 6px 14px;
-  border-radius: 2rem;
-  background-color: #e8845a;
-  border: none;
-}
-
-.main__section--button {
-  width: auto;
-  height: auto;
-  padding: 12px 24px;
-  border-radius: 2rem;
-  background-color: #f4622a;
-  border: none;
-  align-self: center;
-  justify-self: start;
-  margin-top: 38px;
-}
-
-/* ============== SECCION CARDS ==============*/
-/* ===========================================*/
-
-.palette {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-around;
-  gap: 1rem;
-  margin: 0 auto;
-  width: 80%;
-  margin-top: 5rem;
-  margin-bottom: 5rem;
-}
-
-.card {
-  width: 150px;
-  border-radius: 16px;
-  overflow: hidden;
-  background-color: #1a1f2e; /* fondo azul oscuro */
-}
-
-.card-color {
-  width: 100%;
-  height: 180px;
-  border-radius: 12px; /* redondeo interno */
-}
-
-.card-info {
-  padding: 10px 12px 14px;
-}
-
-.card-hex {
-  color: #ffffff;
-  font-size: 15px;
+.botonGenerarPaleta {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.625rem;
+  background-color: var(--colorPrimario);
+  color: var(--colorSobrePrimario);
+  padding: 1rem 2.5rem;
+  border-radius: 0.5rem;
+  font-size: 1rem;
   font-weight: 600;
-  margin-bottom: 4px;
+  border: none;
+  cursor: pointer;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12);
+  transition:
+    opacity 0.2s,
+    transform 0.1s;
+}
+.botonGenerarPaleta:hover {
+  opacity: 0.9;
+}
+.botonGenerarPaleta:active {
+  transform: scale(0.97);
 }
 
-.card-hsl {
+/* ── Sección configuración ── */
+.seccionConfiguracion {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 3rem;
+}
+
+.controlTamanoPaleta {
+  display: inline-flex;
+  align-items: center;
+  gap: 1.5rem;
+  background-color: var(--colorSuperficieContenedorBajo);
+  padding: 0.75rem 2rem;
+  border-radius: 9999px;
+}
+
+.etiquetaControl {
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--colorSobreSuperficieVariante);
+  white-space: nowrap;
+}
+
+.listaOpcionesTamano {
+  display: flex;
+  gap: 0.5rem;
+  list-style: none;
+}
+
+.opcionTamano {
+  padding: 0.375rem 1rem;
+  border-radius: 9999px;
+  font-weight: 500;
+  border: none;
+  cursor: pointer;
+  transition:
+    background-color 0.15s,
+    color 0.15s;
+  background: transparent;
+  color: var(--colorSobreSuperficieVariante);
+}
+.opcionTamano:hover {
+  background-color: var(--colorSuperficieContenedorAlto);
+}
+.opcionTamano.activo {
+  background-color: var(--colorSuperficieContenedorMinimo);
+  color: var(--colorPrimario);
+  font-weight: 700;
+}
+
+/* ── Grilla de paleta ── */
+.grillaPaleta {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+  margin-bottom: 4rem;
+}
+
+/* ── Tarjeta de color ── */
+.tarjetaColor {
+  display: flex;
+  flex-direction: column;
+  padding: 1rem;
+  background-color: var(--colorSuperficieContenedorMinimo);
+  border-radius: 0.75rem;
+  transition: box-shadow 0.3s;
+}
+.tarjetaColor:hover {
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+}
+
+.muestraColor {
+  width: 100%;
+  height: 12rem;
+  border-radius: 0.75rem;
+  margin-bottom: 1.25rem;
+  box-shadow: inset 0 2px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s;
+}
+.tarjetaColor:hover .muestraColor {
+  transform: scale(1.01);
+}
+
+.infoColor {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  padding: 0 0.25rem;
+}
+
+.codigoHex {
+  font-size: 1.1rem;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  color: var(--colorSobreSuperficie);
+  text-transform: uppercase;
+}
+
+.valorHsl {
+  font-size: 0.8rem;
+  font-weight: 500;
+  color: var(--colorSobreSuperficieVariante);
+}
+
+.botonCopiar {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  margin-top: 1rem;
+  padding: 0.5rem 1rem;
+  border-radius: 0.5rem;
+  background-color: var(--colorSuperficieContenedorAlto);
+  color: var(--colorPrimario);
+  font-size: 0.875rem;
+  font-weight: 600;
+  border: none;
+  cursor: pointer;
+  transition:
+    background-color 0.15s,
+    color 0.15s;
+}
+.botonCopiar:hover {
+  background-color: var(--colorSuperficieContenedor);
+  color: var(--colorSobreContenedorPrimario);
+}
+
+/* ── Pie de página ── */
+.piePagina {
+  background-color: var(--colorSuperficie);
+  border-top: 1px solid color-mix(in srgb, var(--colorBorde) 20%, transparent);
+  width: 100%;
+}
+
+.contenidoPie {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 2.5rem 2rem;
+  max-width: 72rem;
+  margin: 0 auto;
+}
+
+.avisoDerechos {
+  font-size: 0.6875rem;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  font-weight: 500;
   color: #6b7280;
-  font-size: 12px;
 }
 
+/* ── Utilidades ── */
 .oculto {
   display: none;
-}
-
-.visible {
-  display: block;
-}
-
-/* ============== FOOTER ==============*/
-/* ====================================*/
-
-.footer {
-  border-top: 1px solid #e8845a;
-  padding: 1rem;
-}
-
-.footer__parrafo {
-  color: #6b7280;
 }

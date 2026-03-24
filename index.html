@@ -1,119 +1,309 @@
 <!doctype html>
-<html lang="en">
+<html lang="es">
   <head>
-    <meta charset="UTF-8" />
+    <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Generador de paletas</title>
+    <title>Colorfly Studio | Generador de Paletas</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap"
+      rel="stylesheet"
+    />
     <link rel="stylesheet" href="css/styles.css" />
   </head>
   <body>
-    <header class="header">
-      <img class="header__logo" src="img/logo.png" alt="" />
-      <h1 class="header__titulo">Colorfly Studio</h1>
+    <header class="encabezadoPrincipal" role="banner">
+      <nav class="barraNavegacion" aria-label="Navegación principal">
+        <a href="/" class="logoMarca" aria-label="Colorfly Studio - inicio"
+          >COLORFLY STUDIO</a
+        >
+      </nav>
     </header>
 
-    <main>
-      <section class="main__section--generador">
-        <div class="main__section--div1">
-          <h2 class="section__div1--h2">Generador de paletas</h2>
-          <p>Crea paletas de colores profesionales en segundos.</p>
-        </div>
-
-        <div class="main__section--div2">
-          <h3>Tamaño de la paleta</h3>
-          <div class="div2__buttons-group">
-            <button class="div2__button buttons-group" id="btn-6">
-              6 colores
-            </button>
-            <button class="div2__button buttons-group" id="btn-8">
-              8 colores
-            </button>
-            <button class="div2__button buttons-group" id="btn-9">
-              9 colores
-            </button>
-          </div>
-        </div>
-
-        <button class="main__section--button" id="generar__paleta">
-          Generar Paletas
+    <main class="contenidoPrincipal" id="contenidoPrincipal">
+      <section class="seccionHero" aria-labelledby="tituloPaginaPrincipal">
+        <h1 class="tituloPrincipal" id="tituloPaginaPrincipal">
+          Generador de Paletas
+        </h1>
+        <button class="botonGenerarPaleta" id="generar__paleta" type="button">
+          <span class="iconoMaterial" aria-hidden="true">palette</span>
+          Generar Paleta
         </button>
       </section>
 
-      <section class="seccion-cards">
-        <div class="palette" id="palette">
-          <div class="card">
-            <div class="card-color" style="background-color: #f46734"></div>
-            <div class="card-info">
-              <p class="card-hex">#F46734</p>
-              <p class="card-hsl">HSL(17, 90%, 58%)</p>
-            </div>
-          </div>
-          <div class="card">
-            <div class="card-color" style="background-color: #f46734"></div>
-            <div class="card-info">
-              <p class="card-hex">#F46734</p>
-              <p class="card-hsl">HSL(17, 90%, 58%)</p>
-            </div>
-          </div>
-          <div class="card">
-            <div class="card-color" style="background-color: #f46734"></div>
-            <div class="card-info">
-              <p class="card-hex">#F46734</p>
-              <p class="card-hsl">HSL(17, 90%, 58%)</p>
-            </div>
-          </div>
-          <div class="card">
-            <div class="card-color" style="background-color: #f46734"></div>
-            <div class="card-info">
-              <p class="card-hex">#F46734</p>
-              <p class="card-hsl">HSL(17, 90%, 58%)</p>
-            </div>
-          </div>
-          <div class="card">
-            <div class="card-color" style="background-color: #f46734"></div>
-            <div class="card-info">
-              <p class="card-hex">#F46734</p>
-              <p class="card-hsl">HSL(17, 90%, 58%)</p>
-            </div>
-          </div>
-          <div class="card">
-            <div class="card-color" style="background-color: #f46734"></div>
-            <div class="card-info">
-              <p class="card-hex">#F46734</p>
-              <p class="card-hsl">HSL(17, 90%, 58%)</p>
-            </div>
-          </div>
-          <div class="card oculto card-extra">
-            <div class="card-color" style="background-color: #f46734"></div>
-            <div class="card-info">
-              <p class="card-hex">#F46734</p>
-              <p class="card-hsl">HSL(17, 90%, 58%)</p>
-            </div>
-          </div>
-          <div class="card oculto card-extra">
-            <div class="card-color" style="background-color: #f46734"></div>
-            <div class="card-info">
-              <p class="card-hex">#F46734</p>
-              <p class="card-hsl">HSL(17, 90%, 58%)</p>
-            </div>
-          </div>
-          <div class="card oculto card-extra">
-            <div class="card-color" style="background-color: #f46734"></div>
-            <div class="card-info">
-              <p class="card-hex">#F46734</p>
-              <p class="card-hsl">HSL(17, 90%, 58%)</p>
-            </div>
-          </div>
+      <section
+        class="seccionConfiguracion"
+        aria-label="Configuración de la paleta"
+      >
+        <div
+          class="controlTamanoPaleta"
+          role="group"
+          aria-labelledby="etiquetaTamano"
+        >
+          <span class="etiquetaControl" id="etiquetaTamano"
+            >Tamaño de paleta</span
+          >
+          <ul class="listaOpcionesTamano">
+            <li>
+              <button
+                class="grupoOpcionesTamano opcionTamano activo"
+                id="btn-6"
+                type="button"
+                aria-pressed="true"
+                aria-label="6 colores"
+              >
+                6
+              </button>
+            </li>
+            <li>
+              <button
+                class="grupoOpcionesTamano opcionTamano"
+                id="btn-8"
+                type="button"
+                aria-pressed="false"
+                aria-label="8 colores"
+              >
+                8
+              </button>
+            </li>
+            <li>
+              <button
+                class="grupoOpcionesTamano opcionTamano"
+                id="btn-9"
+                type="button"
+                aria-pressed="false"
+                aria-label="9 colores"
+              >
+                9
+              </button>
+            </li>
+          </ul>
         </div>
+      </section>
+
+      <section aria-label="Colores de la paleta">
+        <ol class="grillaPaleta">
+          <!-- Tarjetas base: siempre visibles -->
+          <li class="tarjetaColor card">
+            <div
+              class="muestraColor card-color"
+              style="background-color: #515f74"
+              role="img"
+              aria-label="Muestra del color #515F74"
+            ></div>
+            <div class="infoColor">
+              <span class="codigoHex card-hex">#515F74</span>
+              <span class="valorHsl card-hsl">HSL(216, 17%, 39%)</span>
+              <button
+                class="botonCopiar"
+                type="button"
+                aria-label="Copiar código HEX #515F74"
+              >
+                <span class="iconoMaterial" aria-hidden="true"
+                  >content_copy</span
+                >
+                Copiar HEX
+              </button>
+            </div>
+          </li>
+
+          <li class="tarjetaColor card">
+            <div
+              class="muestraColor card-color"
+              style="background-color: #cfdce3"
+              role="img"
+              aria-label="Muestra del color #CFDCE3"
+            ></div>
+            <div class="infoColor">
+              <span class="codigoHex card-hex">#CFDCE3</span>
+              <span class="valorHsl card-hsl">HSL(201, 26%, 85%)</span>
+              <button
+                class="botonCopiar"
+                type="button"
+                aria-label="Copiar código HEX #CFDCE3"
+              >
+                <span class="iconoMaterial" aria-hidden="true"
+                  >content_copy</span
+                >
+                Copiar HEX
+              </button>
+            </div>
+          </li>
+
+          <li class="tarjetaColor card">
+            <div
+              class="muestraColor card-color"
+              style="background-color: #d5e3fd"
+              role="img"
+              aria-label="Muestra del color #D5E3FD"
+            ></div>
+            <div class="infoColor">
+              <span class="codigoHex card-hex">#D5E3FD</span>
+              <span class="valorHsl card-hsl">HSL(220, 87%, 91%)</span>
+              <button
+                class="botonCopiar"
+                type="button"
+                aria-label="Copiar código HEX #D5E3FD"
+              >
+                <span class="iconoMaterial" aria-hidden="true"
+                  >content_copy</span
+                >
+                Copiar HEX
+              </button>
+            </div>
+          </li>
+
+          <li class="tarjetaColor card">
+            <div
+              class="muestraColor card-color"
+              style="background-color: #5b5d78"
+              role="img"
+              aria-label="Muestra del color #5B5D78"
+            ></div>
+            <div class="infoColor">
+              <span class="codigoHex card-hex">#5B5D78</span>
+              <span class="valorHsl card-hsl">HSL(236, 14%, 41%)</span>
+              <button
+                class="botonCopiar"
+                type="button"
+                aria-label="Copiar código HEX #5B5D78"
+              >
+                <span class="iconoMaterial" aria-hidden="true"
+                  >content_copy</span
+                >
+                Copiar HEX
+              </button>
+            </div>
+          </li>
+
+          <li class="tarjetaColor card">
+            <div
+              class="muestraColor card-color"
+              style="background-color: #435368"
+              role="img"
+              aria-label="Muestra del color #435368"
+            ></div>
+            <div class="infoColor">
+              <span class="codigoHex card-hex">#435368</span>
+              <span class="valorHsl card-hsl">HSL(215, 22%, 33%)</span>
+              <button
+                class="botonCopiar"
+                type="button"
+                aria-label="Copiar código HEX #435368"
+              >
+                <span class="iconoMaterial" aria-hidden="true"
+                  >content_copy</span
+                >
+                Copiar HEX
+              </button>
+            </div>
+          </li>
+
+          <li class="tarjetaColor card">
+            <div
+              class="muestraColor card-color"
+              style="background-color: #e8eff3"
+              role="img"
+              aria-label="Muestra del color #E8EFF3"
+            ></div>
+            <div class="infoColor">
+              <span class="codigoHex card-hex">#E8EFF3</span>
+              <span class="valorHsl card-hsl">HSL(202, 33%, 93%)</span>
+              <button
+                class="botonCopiar"
+                type="button"
+                aria-label="Copiar código HEX #E8EFF3"
+              >
+                <span class="iconoMaterial" aria-hidden="true"
+                  >content_copy</span
+                >
+                Copiar HEX
+              </button>
+            </div>
+          </li>
+
+          <!-- Tarjetas extra: ocultas por defecto -->
+          <li class="tarjetaColor card card-extra oculto">
+            <div
+              class="muestraColor card-color"
+              style="background-color: #cecfef"
+              role="img"
+              aria-label="Muestra del color #CECFEF"
+            ></div>
+            <div class="infoColor">
+              <span class="codigoHex card-hex">#CECFEF</span>
+              <span class="valorHsl card-hsl">HSL(238, 48%, 87%)</span>
+              <button
+                class="botonCopiar"
+                type="button"
+                aria-label="Copiar código HEX #CECFEF"
+              >
+                <span class="iconoMaterial" aria-hidden="true"
+                  >content_copy</span
+                >
+                Copiar HEX
+              </button>
+            </div>
+          </li>
+
+          <li class="tarjetaColor card card-extra oculto">
+            <div
+              class="muestraColor card-color"
+              style="background-color: #d3e4fe"
+              role="img"
+              aria-label="Muestra del color #D3E4FE"
+            ></div>
+            <div class="infoColor">
+              <span class="codigoHex card-hex">#D3E4FE</span>
+              <span class="valorHsl card-hsl">HSL(217, 96%, 91%)</span>
+              <button
+                class="botonCopiar"
+                type="button"
+                aria-label="Copiar código HEX #D3E4FE"
+              >
+                <span class="iconoMaterial" aria-hidden="true"
+                  >content_copy</span
+                >
+                Copiar HEX
+              </button>
+            </div>
+          </li>
+
+          <li class="tarjetaColor card card-extra oculto">
+            <div
+              class="muestraColor card-color"
+              style="background-color: #455368"
+              role="img"
+              aria-label="Muestra del color #455368"
+            ></div>
+            <div class="infoColor">
+              <span class="codigoHex card-hex">#455368</span>
+              <span class="valorHsl card-hsl">HSL(215, 20%, 35%)</span>
+              <button
+                class="botonCopiar"
+                type="button"
+                aria-label="Copiar código HEX #455368"
+              >
+                <span class="iconoMaterial" aria-hidden="true"
+                  >content_copy</span
+                >
+                Copiar HEX
+              </button>
+            </div>
+          </li>
+        </ol>
       </section>
     </main>
 
-    <footer class="footer">
-      <p class="footer__parrafo">
-        ©2026 todos los derechos reservados para colorfly studio.
-      </p>
+    <footer class="piePagina" role="contentinfo">
+      <div class="contenidoPie">
+        <small class="avisoDerechos">© 2024 COLORFLY STUDIO.</small>
+      </div>
     </footer>
 
-    <script src="js/main.js" defer></script>
+    <script src="js/main.js"></script>
   </body>
 </html>

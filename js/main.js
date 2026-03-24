@@ -1,13 +1,16 @@
-let btn = document.querySelectorAll(".buttons-group");
+let btn = document.querySelectorAll(".grupoOpcionesTamano");
 let oculto = document.querySelectorAll(".card-extra");
 let card = document.querySelectorAll(".card");
 
 let btnPaleta = document.getElementById("generar__paleta");
 let hex = document.querySelectorAll(".card-hex");
 let cardColor = document.querySelectorAll(".card-color");
+let activo = document.querySelector("activo ");
 
 btn.forEach((valor) => {
   valor.addEventListener("click", () => {
+    btn.forEach((b) => b.classList.remove("activo"));
+    valor.classList.add("activo");
     if (valor.id === "btn-6") {
       recorrerBtn(0);
     }
