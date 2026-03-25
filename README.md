@@ -56,7 +56,7 @@ No requiere instalación de dependencias. Al ser un proyecto de HTML, CSS y Java
 
 El proyecto está desplegado en **GitHub Pages** de forma automática desde la rama `main`.
 
-🔗 [Ver proyecto en vivo](https://joaquinbustos18.github.io/ProyectoM1_JoaquinBustos)
+🔗 [Ver proyecto](https://joaquinbustos18.github.io/ProyectoM1_JoaquinBustos)
 
 ---
 
