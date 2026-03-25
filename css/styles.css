@@ -14,7 +14,7 @@
   --colorBorde: #a9b4b9;
 }
 
-/* ── Reset y base ── */
+/* ── general ── */
 *,
 *::before,
 *::after {
@@ -32,19 +32,7 @@ body {
   flex-direction: column;
 }
 
-.iconoMaterial {
-  font-family: "Material Symbols Outlined";
-  font-variation-settings:
-    "FILL" 0,
-    "wght" 400,
-    "GRAD" 0,
-    "opsz" 24;
-  font-size: 20px;
-  line-height: 1;
-  user-select: none;
-}
-
-/* ── Encabezado ── */
+/* ── header ── */
 .encabezadoPrincipal {
   background-color: var(--colorSuperficie);
   width: 100%;
@@ -70,7 +58,7 @@ body {
   text-decoration: none;
 }
 
-/* ── Contenido principal ── */
+/* ── contenido principal ── */
 .contenidoPrincipal {
   flex: 1;
   max-width: 72rem;
@@ -79,7 +67,7 @@ body {
   width: 100%;
 }
 
-/* ── Sección héroe ── */
+/* ── seccion hero ── */
 .seccionHero {
   display: flex;
   flex-direction: column;
@@ -121,7 +109,7 @@ body {
   transform: scale(0.97);
 }
 
-/* ── Sección configuración ── */
+/* ── seccion config ── */
 .seccionConfiguracion {
   display: flex;
   justify-content: center;
@@ -173,7 +161,7 @@ body {
   font-weight: 700;
 }
 
-/* ── Grilla de paleta ── */
+/* ── cards ── */
 .grillaPaleta {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -250,7 +238,7 @@ body {
   color: var(--colorSobreContenedorPrimario);
 }
 
-/* ── Pie de página ── */
+/* ── footer ── */
 .piePagina {
   background-color: var(--colorSuperficie);
   border-top: 1px solid color-mix(in srgb, var(--colorBorde) 20%, transparent);
@@ -275,7 +263,7 @@ body {
   color: #6b7280;
 }
 
-/* ── Utilidades ── */
+/* ── utilidades para js ── */
 .oculto {
   display: none;
 }

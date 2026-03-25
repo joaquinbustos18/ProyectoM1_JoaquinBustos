@@ -27,6 +27,11 @@ botonCopiar.forEach((btn) => {
   btn.addEventListener("click", () => {
     let cardPadre = btn.closest(".card");
     let hexColor = cardPadre.querySelector(".card-hex");
+    btn.innerHTML = "Color copiado!";
+    setTimeout(() => {
+      btn.innerHTML = "Copiar HEX";
+    }, 1000);
+
     navigator.clipboard.writeText(hexColor.innerHTML);
   });
 });
